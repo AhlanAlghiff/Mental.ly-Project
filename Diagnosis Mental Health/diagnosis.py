@@ -155,3 +155,37 @@ plt.ylabel('Accuracy')
 plt.legend()
 plt.title('Training vs Validation Accuracy')
 plt.show()
+
+pred = model.predict(X_test)
+print(pred[:5])
+
+pred = np.argmax(pred, axis=1)
+print(pred[:5])
+
+print(y_test[:5])
+
+new_data = {
+    'Age': [0.809524],
+    'Gender': [0.0],
+    'Symptom Severity (1-10)': [0.0],
+    'Mood Score (1-10)': [0.0],
+    'Sleep Quality (1-10)': [0.4],
+    'Physical Activity (hrs/week)': [0.777778],
+    'Stress Level (1-10)': [0.0]
+}
+
+new_data = pd.DataFrame(new_data)
+new_data
+
+y_pred = model.predict(new_data)
+
+print("Hasil Diagnosis: ", y_pred)
+
+# Mapping untuk mendapatkan nama diagnosis
+inverse_severity_mapping = {v: k for k, v in severity_mapping.items()}
+predicted_classes = y_pred.argmax(axis=1)
+
+# Konversi hasil prediksi numerik menjadi nama diagnosis
+predicted_diagnoses = [inverse_severity_mapping[i] for i in predicted_classes]
+for id, diagnosis in enumerate(predicted_diagnoses):
+    print(f"Sample {id + 1}: {diagnosis}")
