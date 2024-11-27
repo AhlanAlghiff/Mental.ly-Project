@@ -1,4 +1,4 @@
-package com.c242ps188.mentally_app
+package com.c242ps188.mentally_app.ui.view.splashscreen
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
