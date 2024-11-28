@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1080dp"
+    android:height="1920dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1920">
+
+    <!-- Latar belakang putih penuh -->
+    <path
+        android:fillColor="@color/md_theme_background"
+        android:pathData="M0,0 L1080,0 L1080,1920 L0,1920 Z" />
+
+    <!-- Gelombang terbawah (pink muda) -->
+    <path
+        android:fillAlpha="0.5"
+        android:fillColor="@color/md_theme_primary"
+        android:pathData="M0,650 C900,900 500,250 1100,220 L1080,0 L0,0 Z" />
+
+    <!-- Gelombang teratas (merah) -->
+    <path
+        android:fillAlpha="0.8"
+        android:fillColor="@color/md_theme_primary"
+        android:pathData="M0,720 C800,850 500,250 1080,300 L1080,0 L0,0 Z" />
+</vector>

@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Mental.ly-app</string>
     <string name="logo_mental_ly">Logo Mental.ly</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="hello">Hello,</string>
+    <string name="sample_name">Muhammad Fuad Hamidan</string>
+    <string name="what_do_you_need">What do You need?</string>
+    <string name="self_diagnose">Self Diagnose</string>
+    <string name="diagnose_from_symptoms">Diagnose from Symptoms</string>
+    <string name="share_your_feelings">Share your Feelings</string>
+    <string name="diagnose_from_symptomps_desc">Identify your mental health through symptoms.</string>
+    <string name="share_your_feelings_desc">Express emotions and understand yourself better.</string>
+    <string name="read_articles">Read Articles</string>
+    <string name="see_all">see all</string>
 </resources>
