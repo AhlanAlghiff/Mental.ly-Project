@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.C242PS188.mentally_app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.C242PS188.mentally_app"
