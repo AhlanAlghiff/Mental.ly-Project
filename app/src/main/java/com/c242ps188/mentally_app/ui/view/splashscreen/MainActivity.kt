@@ -1,6 +1,7 @@
 package com.c242ps188.mentally_app.ui.view.splashscreen
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

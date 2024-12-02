@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_primary"
+    tools:context="com.c242ps188.mentally_app.ui.view.login.RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sub_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_rounded_corner">
+
+        <ImageView
+            android:id="@+id/mentally_logo"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="48dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_mentaly"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/welcome_head"
+            android:textAlignment="center"
+            android:textColor="@color/md_theme_primary"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mentally_logo" />
+
+        <TextView
+            android:id="@+id/register_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_guide"
+            android:textAlignment="center"
+            android:alpha="0.7"
+            android:textColor="@color/md_theme_primary"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/register_guide">
+
+            <EditText
+                android:id="@+id/ed_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:textColor="@color/md_theme_secondary"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:autofillHints="name"
+                android:background="@drawable/bg_rounded_edit_text"
+                android:hint="@string/first_name"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/ed_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:textColor="@color/md_theme_secondary"
+                android:autofillHints="name"
+                android:background="@drawable/bg_rounded_edit_text"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                android:paddingStart="16dp"
+                tools:ignore="RtlSymmetry" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ed_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/md_theme_secondary"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/bg_rounded_edit_text"
+            android:drawableStart="@drawable/ic_email_24"
+            android:drawablePadding="8dp"
+            android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_name"
+            tools:ignore="RtlSymmetry" />
+
+        <com.c242ps188.mentally_app.ui.components.MyEditText
+            android:id="@+id/ed_register_password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="password"
+            android:background="@drawable/bg_rounded_edit_text"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:drawablePadding="8dp"
+            android:textColor="@color/md_theme_secondary"
+            android:hint="@string/enter_your_password"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_email"
+            tools:ignore="RtlSymmetry" />
+
+
+        <ImageView
+            android:id="@+id/register_show_password"
+            android:layout_width="38dp"
+            android:padding="6dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/show_password"
+            android:src="@drawable/ic_password_hiden"
+            app:layout_constraintBottom_toBottomOf="@id/ed_register_password"
+            app:layout_constraintEnd_toEndOf="@id/ed_register_password"
+            app:layout_constraintTop_toTopOf="@id/ed_register_password" />
+
+        <com.c242ps188.mentally_app.ui.components.MyEditText
+            android:id="@+id/ed_register_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="password"
+            android:background="@drawable/bg_rounded_edit_text"
+            android:drawableStart="@drawable/ic_lock_24"
+            android:drawablePadding="8dp"
+            android:hint="@string/confirm_password"
+            android:textColor="@color/md_theme_secondary"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_password"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/register_show_password_confirm"
+            android:layout_width="38dp"
+            android:padding="6dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/show_password"
+            android:src="@drawable/ic_password_hiden"
+            app:layout_constraintBottom_toBottomOf="@+id/ed_register_password_confirm"
+            app:layout_constraintEnd_toEndOf="@+id/ed_register_password_confirm"
+            app:layout_constraintTop_toTopOf="@+id/ed_register_password_confirm" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_password_confirm" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/already_have_an_account"
+                android:textAlignment="textEnd"
+                android:textColor="@color/md_theme_primary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login_now"
+                android:textColor="@color/md_theme_primary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

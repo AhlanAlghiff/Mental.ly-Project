@@ -12,5 +12,30 @@
     <string name="diagnose_from_symptomps_desc">Identify your mental health through symptoms.</string>
     <string name="share_your_feelings_desc">Express emotions and understand yourself better.</string>
     <string name="read_articles">Read Articles</string>
+    <string name="error_password">Password must be at least 8 characters long</string>
     <string name="see_all">see all</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="welcome_head">Welcome</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="dont_have_an_account">Don\'t Have an Account? </string>
+    <string name="register_button">Register Now!</string>
+    <string name="register_guide">Please Register to create an account!</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="show_password">Show Password</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">ALready have an account?</string>
+    <string name="login_now">Login now!</string>
+    <string name="login_using_google">Login Using Google</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name_is_required">Name is required</string>
+    <string name="email_required">Email required</string>
+    <string name="password_required">Password required</string>
+    <string name="invalid_email">invalid email</string>
+
 </resources>

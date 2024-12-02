@@ -16,6 +16,12 @@
             android:name="com.c242ps188.mentally_app.ui.view.home.HomeActivity"
             android:exported="false" />
         <activity
+            android:name="com.c242ps188.mentally_app.ui.view.login.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.c242ps188.mentally_app.ui.view.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.c242ps188.mentally_app.ui.view.splashscreen.MainActivity"
             android:exported="true">
             <intent-filter>
