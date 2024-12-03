@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.C242PS188.mentally_app.R
 import com.C242PS188.mentally_app.databinding.ActivityHomeBinding
 import com.c242ps188.mentally_app.ui.view.login.LoginActivity
-import com.c242ps188.mentally_app.ui.view.login.RegisterActivity
 
 class HomeActivity : AppCompatActivity() {
 
