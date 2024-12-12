@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_primaryContainer"
+    tools:context="com.c242ps188.mentally_app.ui.view.diagnose.DiagnoseFeelingActivity">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_arrow_back_2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="@string/back"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/md_theme_onPrimary"
+        app:layout_constraintTop_toTopOf="@id/btn_back"
+        app:layout_constraintBottom_toBottomOf="@id/btn_back"
+        app:layout_constraintStart_toEndOf="@id/btn_back" />
+
+    <TextView
+        android:id="@+id/coming_soon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="320dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/coming"
+        android:textColor="@color/md_theme_onPrimary"
+        android:textSize="42sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_coming_soon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_soon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/soon"
+        android:textSize="42sp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/md_theme_onPrimary"
+        app:layout_constraintTop_toTopOf="@id/coming_soon"
+        app:layout_constraintStart_toStartOf="@id/coming_soon" />
+
+    <TextView
+        android:id="@+id/tv_detail_coming_soon"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/oops_we_re_making_some_improvements_predict_your_feelings_will_be_back_soon_better_than_ever_thanks_for_your_patience"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/md_theme_background_highContrast"
+        app:layout_constraintStart_toStartOf="parent"
+        android:alpha="0.8"
+        app:layout_constraintTop_toBottomOf="@id/tv_soon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Latar belakang progress bar -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/md_theme_secondaryFixed" />
+        </shape>
+    </item>
+
+    <!-- Progress -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape>
+                <solid android:color="@color/md_theme_primary" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

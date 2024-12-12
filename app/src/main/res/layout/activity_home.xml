@@ -1,269 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/md_theme_primary"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_primaryContainer"
     tools:context="com.c242ps188.mentally_app.ui.view.home.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_profile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            app:cardBackgroundColor="@color/md_theme_onPrimary"
-            app:cardCornerRadius="14dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/profile"
-                android:src="@drawable/ic_person_24" />
-
-        </androidx.cardview.widget.CardView>
-
-        <ImageView
-            android:id="@+id/settings"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/settings"
-            android:src="@drawable/ic_settings_24"
-            app:layout_constraintBottom_toBottomOf="@id/cv_profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/cv_profile" />
-
-        <TextView
-            android:id="@+id/tv_hello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="@string/hello"
-            android:textColor="@color/md_theme_onPrimaryContainer"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@id/cv_profile"
-            app:layout_constraintTop_toBottomOf="@id/cv_profile" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:maxWidth="200dp"
-            android:maxHeight="110dp"
-            android:text="@string/sample_name"
-            android:textColor="@color/md_theme_onPrimaryContainer"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="@id/tv_hello"
-            app:layout_constraintTop_toTopOf="@id/tv_hello" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/view_content"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bg_rounded_corner"
-            app:layout_constraintTop_toBottomOf="@id/tv_name">
+            android:layout_height="0dp"
+            android:background="@color/md_theme_background"
+            app:layout_constraintTop_toBottomOf="@id/sv_home"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_self_diagnose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/self_diagnose"
-                android:textColor="@color/md_theme_secondary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:id="@+id/sv_home"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_diagnose_from_symptomps"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/md_theme_onPrimaryContainer"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_self_diagnose">
+                android:layout_height="wrap_content">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/iv_diagnose_from_symptoms"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="@string/diagnose_from_symptoms"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_diagnose_2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="@id/iv_diagnose_from_symptoms"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/iv_diagnose_from_symptoms"
-                        app:layout_constraintTop_toTopOf="@id/iv_diagnose_from_symptoms">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="@string/diagnose_from_symptoms"
-                            android:alpha="0.9"
-                            android:textColor="@color/md_theme_primary"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/diagnose_from_symptomps_desc"
-                            android:textColor="@color/md_theme_onSecondaryFixed"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_share_your_feelings"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/md_theme_onPrimaryContainer"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@id/cv_diagnose_from_symptomps">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/iv_share_your_feelings"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="8dp"
-                        android:contentDescription="@string/share_your_feelings"
-                        android:padding="8dp"
-                        android:src="@drawable/ic_diagnose"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="@id/iv_share_your_feelings"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/iv_share_your_feelings"
-                        app:layout_constraintTop_toTopOf="@id/iv_share_your_feelings">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="@string/share_your_feelings"
-                            android:alpha="0.9"
-                            android:textColor="@color/md_theme_primary"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="@string/share_your_feelings_desc"
-                            android:textColor="@color/md_theme_onSecondaryFixed"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/linear_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/cv_share_your_feelings">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/read_articles"
-                    android:textColor="@color/md_theme_secondary"
-                    android:textStyle="bold"
-                    android:textSize="14sp" />
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="23dp"
-                    android:layout_gravity="center"
-                    android:backgroundTint="@color/md_theme_primary"
-                    app:cardCornerRadius="11dp">
+                    android:id="@+id/cv_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    app:cardBackgroundColor="@color/md_theme_onPrimary"
+                    app:cardCornerRadius="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/tv_see_all"
+                    <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"
-                        android:text="@string/see_all"
-                        android:textColor="@color/md_theme_onPrimaryContainer"
-                        android:textSize="14sp" />
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/profile"
+                        android:src="@drawable/ic_person_24" />
+
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/settings"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/settings"
+                    android:src="@drawable/ic_settings_24"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/cv_profile" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_article"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@id/linear_container" />
+                <TextView
+                    android:id="@+id/tv_hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/hello"
+                    android:textColor="@color/md_theme_onPrimaryContainer"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/cv_profile"
+                    app:layout_constraintTop_toBottomOf="@id/cv_profile" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:maxWidth="220dp"
+                    android:maxHeight="135dp"
+                    android:text="@string/sample_name"
+                    android:textColor="@color/md_theme_onPrimaryContainer"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tv_hello"
+                    app:layout_constraintTop_toTopOf="@id/tv_hello" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/view_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_rounded_corner"
+                    app:layout_constraintTop_toBottomOf="@id/tv_name">
+
+                    <TextView
+                        android:id="@+id/tv_self_diagnose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/self_diagnose"
+                        android:textColor="@color/md_theme_secondary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_diagnose_from_symptomps"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_self_diagnose">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/iv_diagnose_from_symptoms"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="8dp"
+                                android:contentDescription="@string/diagnose_from_symptoms"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_diagnose_2"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@id/iv_diagnose_from_symptoms"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/iv_diagnose_from_symptoms"
+                                app:layout_constraintTop_toTopOf="@id/iv_diagnose_from_symptoms">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:alpha="0.9"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="@string/diagnose_from_symptoms"
+                                    android:textColor="@color/md_theme_primary"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/diagnose_from_symptomps_desc"
+                                    android:textColor="@color/md_theme_onSecondaryFixed"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_share_your_feelings"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        app:cardElevation="6dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_diagnose_from_symptomps">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/iv_share_your_feelings"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="8dp"
+                                android:contentDescription="@string/share_your_feelings"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_diagnose"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@id/iv_share_your_feelings"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/iv_share_your_feelings"
+                                app:layout_constraintTop_toTopOf="@id/iv_share_your_feelings">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:alpha="0.9"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:text="@string/share_your_feelings"
+                                    android:textColor="@color/md_theme_primary"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:text="@string/share_your_feelings_desc"
+                                    android:textColor="@color/md_theme_onSecondaryFixed"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/linear_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/cv_share_your_feelings">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/read_articles"
+                            android:textColor="@color/md_theme_secondary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_article"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/linear_container" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

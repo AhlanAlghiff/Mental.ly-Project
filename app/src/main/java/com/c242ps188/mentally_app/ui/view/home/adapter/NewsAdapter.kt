@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.C242PS188.mentally_app.databinding.ListArticlesBinding
-import com.bumptech.glide.Glide
 import com.c242ps188.mentally_app.data.local.model.News
 
 class NewsAdapter(private val onClick: (News) -> Unit)
@@ -14,13 +13,17 @@ class NewsAdapter(private val onClick: (News) -> Unit)
 
     class ViewHolder(private val binding: ListArticlesBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: News, onClick: (News) -> Unit){
-            Glide.with(binding.root.context)
-                .load(item.photo)
-                .into(binding.itemImage)
+            binding.itemImage.setImageResource(item.photo)
+            binding.tvTitleArticle.setText(item.title)
+            if (item.id == 1) {
+                val layoutParams = binding.container.layoutParams as ViewGroup.MarginLayoutParams
+                layoutParams.marginStart = 46
+                binding.container.layoutParams = layoutParams
+            }
 
-            binding.tvTitleArticle.text = item.title
-
-            binding.root.setOnClickListener { onClick(item) }
+            binding.container.setOnClickListener {
+                onClick(item)
+            }
         }
 
     }
