@@ -27,6 +27,8 @@
                     android:layout_width="134dp"
                     android:layout_height="134dp"
                     android:layout_marginTop="64dp"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:src="@drawable/ic_mentaly"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +41,8 @@
                     android:fontFamily="@font/poppins_semibold"
                     android:text="@string/welcome_head"
                     android:textAlignment="center"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:textColor="@color/md_theme_primary"
                     android:textSize="24sp"
                     app:layout_constraintTop_toBottomOf="@+id/app_logo"
@@ -51,6 +55,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="44dp"
                     android:layout_marginEnd="16dp"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:autofillHints="emailAddress"
                     android:background="@drawable/bg_rounded_edit_text"
                     android:drawableStart="@drawable/ic_email_24"
@@ -72,6 +78,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:textColorHint="@color/md_theme_secondary"
                     android:textColor="@color/md_theme_secondary"
                     android:background="@drawable/bg_rounded_edit_text"
@@ -89,6 +97,8 @@
                     android:id="@+id/show_password"
                     android:layout_width="38dp"
                     android:layout_height="30dp"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:layout_marginEnd="16dp"
                     android:contentDescription="@string/show_password"
                     android:padding="6dp"
@@ -106,6 +116,8 @@
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/md_theme_primary"
                     android:fontFamily="@font/poppins_regular"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:text="@string/login"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +136,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
+                    android:alpha="0"
+                    tools:alpha="1"
                     app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
                 <LinearLayout
@@ -138,11 +152,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_or">
 
                     <TextView
+                        android:id="@+id/tv_dontHaveAcount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:text="@string/dont_have_an_account"
                         android:textAlignment="textEnd"
+                        android:alpha="0"
+                        tools:alpha="1"
                         android:textColor="@color/md_theme_primary"
                         android:textSize="12sp" />
 
@@ -153,6 +170,8 @@
                         android:text="@string/register_button"
                         android:textColor="@color/md_theme_primary"
                         android:textSize="12sp"
+                        android:alpha="0"
+                        tools:alpha="1"
                         android:textStyle="bold" />
 
                 </LinearLayout>

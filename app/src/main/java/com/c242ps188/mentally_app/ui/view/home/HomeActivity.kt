@@ -1,7 +1,10 @@
 package com.c242ps188.mentally_app.ui.view.home
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -39,9 +42,28 @@ class HomeActivity : AppCompatActivity() {
             insets
         }
 
+        setAnimation()
         observe()
         setListener()
         setAdapter()
+    }
+
+    private fun setAnimation() {
+        ObjectAnimator.ofFloat(bindig.tvName, View.ALPHA, 1f).apply {
+            duration = 1800
+            start()
+        }
+        val diagnose1 = ObjectAnimator.ofFloat(bindig.cvDiagnoseFromSymptomps, View.ALPHA, 1f).apply {
+            duration = 500
+        }
+        val diagnose2 = ObjectAnimator.ofFloat(bindig.cvShareYourFeelings, View.ALPHA, 1f).apply {
+            duration = 500
+        }
+
+        AnimatorSet().apply {
+            playSequentially(diagnose1, diagnose2)
+            start()
+        }
     }
 
     private fun observe() {

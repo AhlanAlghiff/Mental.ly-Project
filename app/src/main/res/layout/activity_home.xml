@@ -77,6 +77,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:alpha="0"
+                    tools:alpha="1"
                     android:fontFamily="@font/poppins_regular"
                     android:maxWidth="220dp"
                     android:maxHeight="135dp"
@@ -117,6 +119,8 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         app:cardCornerRadius="10dp"
+                        android:alpha="0"
+                        tools:alpha="1"
                         app:layout_constraintTop_toBottomOf="@id/tv_self_diagnose">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -177,6 +181,8 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
+                        android:alpha="0"
+                        tools:alpha="1"
                         app:cardElevation="6dp"
                         android:layout_marginEnd="16dp"
                         app:cardCornerRadius="10dp"

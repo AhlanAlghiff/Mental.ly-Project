@@ -1,9 +1,12 @@
 package com.c242ps188.mentally_app.ui.view.login
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -41,6 +44,52 @@ class LoginActivity : AppCompatActivity() {
         }
         observe()
         setListener()
+        setAnimation()
+    }
+
+    private fun setAnimation() {
+        val email = ObjectAnimator.ofFloat(binding.edLoginEmail, View.ALPHA, 1f).apply {
+            duration = 400
+        }
+        val password = ObjectAnimator.ofFloat(binding.edLoginPassword, View.ALPHA, 1f).apply {
+            duration = 400
+        }
+        val logo = ObjectAnimator.ofFloat(binding.appLogo, View.ALPHA, 1f).apply {
+            duration = 800
+        }
+        val welcome = ObjectAnimator.ofFloat(binding.tvWelcome, View.ALPHA, 1f).apply {
+            duration = 800
+        }
+        val showPassword = ObjectAnimator.ofFloat(binding.showPassword, View.ALPHA, 1f).apply {
+            duration = 800
+        }
+        val btnLogin = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).apply {
+            duration = 400
+        }
+        val tvOr = ObjectAnimator.ofFloat(binding.tvOr, View.ALPHA, 1f).apply {
+            duration = 300
+        }
+        val dontHaveAccount = ObjectAnimator.ofFloat(binding.tvDontHaveAcount, View.ALPHA, 1f).apply {
+            duration = 300
+        }
+        val tvRegister = ObjectAnimator.ofFloat(binding.tvRegister, View.ALPHA, 1f).apply {
+            duration = 300
+        }
+
+        val playTogether1 = AnimatorSet().apply {
+            playTogether(logo, welcome)
+        }
+        val playTogether2 = AnimatorSet().apply {
+            playTogether(tvOr, dontHaveAccount, tvRegister)
+        }
+        val playTogether3 = AnimatorSet().apply {
+            playTogether(password, showPassword)
+        }
+
+        AnimatorSet().apply {
+            playSequentially(playTogether1, email, playTogether3, btnLogin, playTogether2)
+            start()
+        }
     }
 
     private fun observe() {
