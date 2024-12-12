@@ -301,7 +301,7 @@ class DiagnoseSymptomsActivity : AppCompatActivity() {
             ) {
                 parent?.let {
                     val inputAge = it.getItemAtPosition(position).toString()
-                    diagnoseViewModel.age = ageScaling(inputAge.toInt(), ageOptions.last().toInt(), ageOptions.first().toInt())
+                    diagnoseViewModel.age = inputAge.toFloat()
                 }
             }
 
@@ -583,7 +583,7 @@ class DiagnoseSymptomsActivity : AppCompatActivity() {
         }
     }
 
-    private fun ageScaling(age: Int, max: Int, min: Int): Float {
-        return (age.toFloat() - min.toFloat()) / (max.toFloat() - min.toFloat())
-    }
+//    private fun ageScaling(age: Int, max: Int, min: Int): Float {
+//        return (age.toFloat() - min.toFloat()) / (max.toFloat() - min.toFloat())
+//    }
 }

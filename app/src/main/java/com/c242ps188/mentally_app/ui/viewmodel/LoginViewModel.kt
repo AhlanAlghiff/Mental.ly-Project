@@ -25,4 +25,8 @@ class LoginViewModel(private val loginRepository: LoginRepository): ViewModel() 
             loginRepository.login(email, password)
         }
     }
+
+    fun removeLoginInfo(){
+        loginRepository.removeLoginInfo()
+    }
 }

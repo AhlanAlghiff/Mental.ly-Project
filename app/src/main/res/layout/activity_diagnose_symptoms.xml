@@ -68,7 +68,9 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp"
                         app:cardCornerRadius="11dp"
+                        app:cardElevation="10dp"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <LinearLayout
@@ -126,6 +128,7 @@
                         android:layout_marginTop="24dp"
                         android:layout_marginEnd="16dp"
                         app:cardCornerRadius="11dp"
+                        app:cardElevation="10dp"
                         app:layout_constraintTop_toBottomOf="@id/cv_gender">
 
                         <LinearLayout
@@ -1081,7 +1084,7 @@
                 android:layout_marginTop="32dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:visibility="visible">
+                tools:visibility="gone">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/skor"
@@ -1096,7 +1099,7 @@
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center"
-                        android:text="@string/back_depression_inventory_bdi_skor"
+                        android:text="@string/diagnosis_result"
                         android:textColor="@color/md_theme_primary"
                         android:textSize="20sp"
                         app:layout_constraintEnd_toEndOf="parent"

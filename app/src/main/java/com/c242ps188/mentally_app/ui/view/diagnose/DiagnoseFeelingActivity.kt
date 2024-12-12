@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.C242PS188.mentally_app.R
 import com.C242PS188.mentally_app.databinding.ActivityDiagnoseFeelingBinding
-import com.C242PS188.mentally_app.databinding.ActivitySettingsBinding
 
 class DiagnoseFeelingActivity : AppCompatActivity() {
 

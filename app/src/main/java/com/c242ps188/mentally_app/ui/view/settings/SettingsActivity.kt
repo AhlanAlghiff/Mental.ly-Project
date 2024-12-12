@@ -59,10 +59,10 @@ class SettingsActivity : AppCompatActivity() {
                 setTitle("Logout Confirmation")
                 setMessage("Are you sure you want to logout?")
                 setPositiveButton("Yes") { _, _ ->
+                    usersViewModel.removeSession()
                     val intent = Intent(this@SettingsActivity, LoginActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     }
-                    usersViewModel.removeSession()
                     startActivity(intent)
                 }
                 setNegativeButton("No") { dialog, _ ->

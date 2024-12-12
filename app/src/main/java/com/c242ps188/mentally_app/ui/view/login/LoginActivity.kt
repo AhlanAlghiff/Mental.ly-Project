@@ -135,6 +135,8 @@ class LoginActivity : AppCompatActivity() {
                     flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 }
                 startActivity(intent)
+
+                loginViewModel.removeLoginInfo()
             } else {
                 if (message != null) {
                     showToast(message)

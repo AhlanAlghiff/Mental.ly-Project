@@ -81,6 +81,11 @@ class LoginRepository(
         }
     }
 
+    fun removeLoginInfo(){
+        _loginMessage.value = null
+        _loginResult.value = null
+    }
+
 
     companion object {
         @Volatile
