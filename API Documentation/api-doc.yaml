@@ -1,0 +1,247 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Mental-ly Backend
+  contact: {}
+host: mentaly-backend-47867379861.asia-southeast2.run.app
+basePath: /v1
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /auth/register:
+    post:
+      summary: Register
+      tags:
+      - Misc
+      operationId: Register
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/RegisterRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /auth/login:
+    post:
+      summary: Login
+      tags:
+      - Misc
+      operationId: Login
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/LoginRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /auth/token:
+    get:
+      summary: Refresh Token
+      tags:
+      - Misc
+      operationId: RefreshToken
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Cookie
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /diagnosis:
+    post:
+      summary: Diagnosis
+      tags:
+      - Misc
+      operationId: Diagnosis
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: false
+        enum:
+        - application/json
+        type: string
+        description: ''
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/DiagnosisRequest'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      security: []
+definitions:
+  RegisterRequest:
+    title: RegisterRequest
+    example:
+      name: bangkit
+      email: bangkit1@gmail.com
+      password: bangkit123
+      confPassword: bangkit123
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      confPassword:
+        type: string
+    required:
+    - name
+    - email
+    - password
+    - confPassword
+  LoginRequest:
+    title: LoginRequest
+    example:
+      email: ancit@gmail.com
+      password: ancit123
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+  DiagnosisRequest:
+    title: DiagnosisRequest
+    example:
+      user_id: '{{user_id}}'
+      data:
+        age: 10
+        gender: 1
+        work_pressure: 1
+        job_satisfaction: 1
+        sleep_duration: 1
+        dietary_habits: 1
+        have_you_ever_had_suicidal_thoughts: 1
+        work_hours: 1
+        financial_stress: 1
+        family_history_of_mental_illness: 0
+    type: object
+    properties:
+      user_id:
+        type: string
+      data:
+        $ref: '#/definitions/Data'
+    required:
+    - user_id
+    - data
+  Data:
+    title: Data
+    example:
+      age: 10
+      gender: 1
+      work_pressure: 1
+      job_satisfaction: 1
+      sleep_duration: 1
+      dietary_habits: 1
+      have_you_ever_had_suicidal_thoughts: 1
+      work_hours: 1
+      financial_stress: 1
+      family_history_of_mental_illness: 0
+    type: object
+    properties:
+      age:
+        type: integer
+        format: int32
+      gender:
+        type: integer
+        format: int32
+      work_pressure:
+        type: integer
+        format: int32
+      job_satisfaction:
+        type: integer
+        format: int32
+      sleep_duration:
+        type: integer
+        format: int32
+      dietary_habits:
+        type: integer
+        format: int32
+      have_you_ever_had_suicidal_thoughts:
+        type: integer
+        format: int32
+      work_hours:
+        type: integer
+        format: int32
+      financial_stress:
+        type: integer
+        format: int32
+      family_history_of_mental_illness:
+        type: integer
+        format: int32
+    required:
+    - age
+    - gender
+    - work_pressure
+    - job_satisfaction
+    - sleep_duration
+    - dietary_habits
+    - have_you_ever_had_suicidal_thoughts
+    - work_hours
+    - financial_stress
+    - family_history_of_mental_illness
+tags:
+- name: Misc
+  description: ''
