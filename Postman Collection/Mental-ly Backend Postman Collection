@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "a0c60a70-036b-47f9-b30f-6247ffbb5848",
+		"name": "Mental-ly Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40334133"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ancit\",\r\n    \"email\": \"ancit@gmail.com\",\r\n    \"password\": \"ancit123\",\r\n    \"confPassword\": \"ancit123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Login successful\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    const jsonData = pm.response.json();\r",
+							"    \r",
+							"    // Save tokens to environment\r",
+							"    pm.environment.set(\"user_id\", jsonData.user.id);\r",
+							"    pm.environment.set(\"access_token\", jsonData.accessToken);\r",
+							"    pm.environment.set(\"refresh_token\", jsonData.refreshToken);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ancit@gmail.com\",\r\n    \"password\": \"ancit123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "{{access_token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/v1/auth/token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Diagnosis",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Prediction successful\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    const response = pm.response.json();\r",
+							"    pm.expect(response).to.have.property(\"diagnosis\");\r",
+							"    pm.expect(response).to.have.property(\"confidence\");\r",
+							"    pm.expect(response).to.have.property(\"risks_factors\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"{{user_id}}\",\r\n    \"data\": {\r\n        \"age\": 10,\r\n        \"gender\": 1,\r\n        \"work_pressure\": 1,\r\n        \"job_satisfaction\": 1,\r\n        \"sleep_duration\": 1,\r\n        \"dietary_habits\": 1,\r\n        \"have_you_ever_had_suicidal_thoughts\": 1,\r\n        \"work_hours\": 1,\r\n        \"financial_stress\":1,\r\n        \"family_history_of_mental_illness\": 0\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/diagnosis",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"diagnosis"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
