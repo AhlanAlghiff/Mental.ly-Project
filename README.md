@@ -106,7 +106,6 @@ cd Mental.ly-Project
 - **APK**: [Download APK](https://drive.google.com/file/d/1r-3j7ZQ_jImhMBdAKnrag8UOqRZDEwgc/view?usp=sharing)
 - **API Documentation**: [Link](https://docs.google.com/document/d/1tqaX13V4L8JK1NWKViGNkdTl56rA1abvTdxX5fIqtYk/edit?usp=sharing)
 - **Figma**: [Design Link](https://www.figma.com/design/le8QRZ87jNlmDhwWibPDa6/Mental.ly-Project?node-id=0-1&t=Wil7dGjQbOu3Iiio-1)
-- 
 ---
 
 ## Contribution Guidelines
