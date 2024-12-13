@@ -55,6 +55,60 @@ The project is organized into the following branches:
 
 ---
 
+## Installation
+
+To set up the **Mental.ly** project on your local machine, follow these instructions.
+
+1. **Clone the Repository**
+   - Open a terminal or command prompt, navigate to the directory where you want to store the project, and use the following command to clone the repository:
+   ```bash
+   git clone https://github.com/user-attachments/Mental.ly-Project.git
+   ```
+
+2. **Navigate into the Project Directory**
+   After cloning, change into the project directory:
+   ```bash
+   cd Mental.ly-Project
+   ```
+
+3. **Install Dependencies**
+   For **Machine Learning** and **Cloud Computing** sections, install the required dependencies:
+   - **Machine Learning**: Make sure you have `TensorFlow`, `Pandas`, and `Numpy` installed.
+     ```bash
+     pip install tensorflow pandas numpy
+     ```
+   - **Cloud Computing**: Set up Google Cloud services using Node.js and Postman as per the instructions in the cloud branch.
+
+4. **Run the Mobile App**
+   - Open the **Mobile-Development** branch in **Android Studio** and follow the setup steps for running the Android app.
+
+---
+
+## Clone Project Instructions
+
+To clone the **Mental.ly** project, run the following command:
+
+```bash
+git clone https://github.com/user-attachments/Mental.ly-Project.git
+```
+
+Then, navigate into the project directory:
+```bash
+cd Mental.ly-Project
+```
+
+---
+
+## Screenshots/Links
+
+- **App Screenshot**: ![Frame 56](https://github.com/user-attachments/assets/9f365105-9bee-4fdf-b9c7-ac21a97e698a)
+- **Demo Video**: [Link](https://www.example.com)
+- **APK**: [Download APK](https://drive.google.com/file/d/1r-3j7ZQ_jImhMBdAKnrag8UOqRZDEwgc/view?usp=sharing)
+- **API Documentation**: [Link](https://docs.google.com/document/d/1tqaX13V4L8JK1NWKViGNkdTl56rA1abvTdxX5fIqtYk/edit?usp=sharing)
+- **Figma**: [Design Link](https://www.figma.com/design/le8QRZ87jNlmDhwWibPDa6/Mental.ly-Project?node-id=0-1&t=Wil7dGjQbOu3Iiio-1)
+- 
+---
+
 ## Contribution Guidelines
 
 - Fork the repository and create feature branches from the corresponding branch.
